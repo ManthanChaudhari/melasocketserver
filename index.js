@@ -3,7 +3,7 @@ import { Server } from "socket.io";
 import {createServer} from "http"
 import cors from "cors"
 
-const port = 3001;
+const port =  "https://melasocketserver.vercel.app/";
 const app = express();
 const server = createServer(app);
 const io = new Server(server,{
