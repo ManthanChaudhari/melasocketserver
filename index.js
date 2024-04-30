@@ -36,6 +36,6 @@ io.on("connection" , (socket) => {
         socket.broadcast.emit("disconnected" , socket.id);
     })
 })
-server.listen(process.env.PORT , () => {
+server.listen("https://melasocketserver.vercel.app/" , () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 });
