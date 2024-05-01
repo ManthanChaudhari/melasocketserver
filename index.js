@@ -3,7 +3,7 @@ import { Server } from "socket.io";
 import {createServer} from "http"
 import cors from "cors"
 
-//const port =  "https://melasocketserver.vercel.app/";
+const port =  process.env.PORT;
 const app = express();
 const server = createServer(app);
 const io = new Server(server,{
@@ -41,6 +41,6 @@ io.on("connection" , (socket) => {
         socket.broadcast.emit("disconnected" , socket.id);
     })
 })
-server.listen("https://melasocketserver.vercel.app/" , () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
+server.listen(port , () => {
+    console.log(`Server is running on port ${port}`);
 });
