@@ -18,7 +18,11 @@ app.get("/" , (req,res) => {
     res.send("Hello World!");
 });
 
-app.use(cors());
+app.use(cors({
+        origin : "https://chat-web-app-alpha.vercel.app",
+        methods : ["GET" , "POST"],
+        credentials : true
+}));
 
 io.on("connection" , (socket) => {
     console.log("User Connected");
